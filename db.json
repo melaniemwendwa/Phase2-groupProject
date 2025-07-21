@@ -1,0 +1,79 @@
+{
+  "departments": [
+    { "id": 1, "name": "Cardiology" },
+    { "id": 2, "name": "Pediatrics" },
+    { "id": 3, "name": "Dermatology" },
+    { "id": 4, "name": "Neurology" },
+    { "id": 5, "name": "Orthopedics" },
+    { "id": 6, "name": "ENT" },
+    { "id": 7, "name": "Oncology" },
+    { "id": 8, "name": "Psychiatry" },
+    { "id": 9, "name": "Gynecology" },
+    { "id": 10, "name": "General Medicine" }
+  ],
+
+  "doctors": [
+    { "id": 1, "name": "Dr. Mercy Mutiso", "departmentId": 1, "specialty": "Heart Specialist", "image": "https://via.placeholder.com/150" },
+    { "id": 2, "name": "Dr. Kevin Ochieng", "departmentId": 1, "specialty": "Cardiac Surgeon", "image": "https://via.placeholder.com/150" },
+    { "id": 3, "name": "Dr. Alice Kimani", "departmentId": 1, "specialty": "Cardiologist", "image": "https://via.placeholder.com/150" },
+    { "id": 4, "name": "Dr. Fred Kiptoo", "departmentId": 1, "specialty": "Interventional Cardiologist", "image": "https://via.placeholder.com/150" },
+    { "id": 5, "name": "Dr. Susan Wanjiku", "departmentId": 1, "specialty": "Cardiac Nurse", "image": "https://via.placeholder.com/150" },
+
+    { "id": 6, "name": "Dr. John Mwangi", "departmentId": 2, "specialty": "Child Health", "image": "https://via.placeholder.com/150" },
+    { "id": 7, "name": "Dr. Sheila Atieno", "departmentId": 2, "specialty": "Pediatric Surgeon", "image": "https://via.placeholder.com/150" },
+    { "id": 8, "name": "Dr. Brian Njoroge", "departmentId": 2, "specialty": "Neonatologist", "image": "https://via.placeholder.com/150" },
+    { "id": 9, "name": "Dr. Judy Owino", "departmentId": 2, "specialty": "Pediatrician", "image": "https://via.placeholder.com/150" },
+    { "id": 10, "name": "Dr. Peter Otieno", "departmentId": 2, "specialty": "Child Psychologist", "image": "https://via.placeholder.com/150" },
+
+    { "id": 11, "name": "Dr. Aisha Otieno", "departmentId": 3, "specialty": "Skin Specialist", "image": "https://via.placeholder.com/150" },
+    { "id": 12, "name": "Dr. Lilian Mumbi", "departmentId": 3, "specialty": "Dermatopathologist", "image": "https://via.placeholder.com/150" },
+    { "id": 13, "name": "Dr. Faith Mumo", "departmentId": 3, "specialty": "Cosmetic Dermatologist", "image": "https://via.placeholder.com/150" },
+    { "id": 14, "name": "Dr. Alex Mutua", "departmentId": 3, "specialty": "Clinical Dermatologist", "image": "https://via.placeholder.com/150" },
+    { "id": 15, "name": "Dr. Terry Wambua", "departmentId": 3, "specialty": "Acne Specialist", "image": "https://via.placeholder.com/150" },
+
+    { "id": 16, "name": "Dr. Brian Okoth", "departmentId": 4, "specialty": "Brain Specialist", "image": "https://via.placeholder.com/150" },
+    { "id": 17, "name": "Dr. Nancy Achieng", "departmentId": 4, "specialty": "Neurosurgeon", "image": "https://via.placeholder.com/150" },
+    { "id": 18, "name": "Dr. Kelvin Odhiambo", "departmentId": 4, "specialty": "Neurologist", "image": "https://via.placeholder.com/150" },
+    { "id": 19, "name": "Dr. Winnie Chebet", "departmentId": 4, "specialty": "Stroke Specialist", "image": "https://via.placeholder.com/150" },
+    { "id": 20, "name": "Dr. Stephen Muli", "departmentId": 4, "specialty": "Spine Doctor", "image": "https://via.placeholder.com/150" },
+
+    { "id": 21, "name": "Dr. Dan Kamau", "departmentId": 5, "specialty": "Bone Specialist", "image": "https://via.placeholder.com/150" },
+    { "id": 22, "name": "Dr. Carol Nduta", "departmentId": 5, "specialty": "Joint Surgeon", "image": "https://via.placeholder.com/150" },
+    { "id": 23, "name": "Dr. Evans Muriuki", "departmentId": 5, "specialty": "Orthopedic Surgeon", "image": "https://via.placeholder.com/150" },
+    { "id": 24, "name": "Dr. Sharon Waceke", "departmentId": 5, "specialty": "Sports Injuries", "image": "https://via.placeholder.com/150" },
+    { "id": 25, "name": "Dr. Jared Otieno", "departmentId": 5, "specialty": "Trauma Specialist", "image": "https://via.placeholder.com/150" },
+
+    { "id": 26, "name": "Dr. Linda Wanja", "departmentId": 6, "specialty": "ENT Surgeon", "image": "https://via.placeholder.com/150" },
+    { "id": 27, "name": "Dr. Mark Okello", "departmentId": 6, "specialty": "Audiologist", "image": "https://via.placeholder.com/150" },
+    { "id": 28, "name": "Dr. Rita Khamala", "departmentId": 6, "specialty": "Nose & Sinus Doctor", "image": "https://via.placeholder.com/150" },
+    { "id": 29, "name": "Dr. Felix Kiprotich", "departmentId": 6, "specialty": "Throat Specialist", "image": "https://via.placeholder.com/150" },
+    { "id": 30, "name": "Dr. Diana Kilonzo", "departmentId": 6, "specialty": "Speech Therapist", "image": "https://via.placeholder.com/150" },
+
+    { "id": 31, "name": "Dr. Grace Maina", "departmentId": 7, "specialty": "Cancer Specialist", "image": "https://via.placeholder.com/150" },
+    { "id": 32, "name": "Dr. Joel Njenga", "departmentId": 7, "specialty": "Radiation Oncologist", "image": "https://via.placeholder.com/150" },
+    { "id": 33, "name": "Dr. Mercy Njeri", "departmentId": 7, "specialty": "Breast Cancer Specialist", "image": "https://via.placeholder.com/150" },
+    { "id": 34, "name": "Dr. Hillary Njuguna", "departmentId": 7, "specialty": "Pediatric Oncologist", "image": "https://via.placeholder.com/150" },
+    { "id": 35, "name": "Dr. Joan Mburu", "departmentId": 7, "specialty": "Medical Oncologist", "image": "https://via.placeholder.com/150" },
+
+    { "id": 36, "name": "Dr. Tony Wekesa", "departmentId": 8, "specialty": "Psychiatrist", "image": "https://via.placeholder.com/150" },
+    { "id": 37, "name": "Dr. Rachel Mumo", "departmentId": 8, "specialty": "Therapist", "image": "https://via.placeholder.com/150" },
+    { "id": 38, "name": "Dr. George Muriuki", "departmentId": 8, "specialty": "Addiction Specialist", "image": "https://via.placeholder.com/150" },
+    { "id": 39, "name": "Dr. Angela Nduta", "departmentId": 8, "specialty": "Child Psychiatrist", "image": "https://via.placeholder.com/150" },
+    { "id": 40, "name": "Dr. Brian Omondi", "departmentId": 8, "specialty": "Trauma Psychologist", "image": "https://via.placeholder.com/150" },
+
+    { "id": 41, "name": "Dr. Ivy Achieng", "departmentId": 9, "specialty": "Gynecologist", "image": "https://via.placeholder.com/150" },
+    { "id": 42, "name": "Dr. Tom Karanja", "departmentId": 9, "specialty": "Obstetrician", "image": "https://via.placeholder.com/150" },
+    { "id": 43, "name": "Dr. Phyllis Moraa", "departmentId": 9, "specialty": "Fertility Specialist", "image": "https://via.placeholder.com/150" },
+    { "id": 44, "name": "Dr. Janet Wafula", "departmentId": 9, "specialty": "Prenatal Specialist", "image": "https://via.placeholder.com/150" },
+    { "id": 45, "name": "Dr. David Chege", "departmentId": 9, "specialty": "Midwife", "image": "https://via.placeholder.com/150" },
+
+    { "id": 46, "name": "Dr. Edith Kamene", "departmentId": 10, "specialty": "General Practitioner", "image": "https://via.placeholder.com/150" },
+    { "id": 47, "name": "Dr. Isaac Wambua", "departmentId": 10, "specialty": "Family Doctor", "image": "https://via.placeholder.com/150" },
+    { "id": 48, "name": "Dr. Rose Nyaruai", "departmentId": 10, "specialty": "Internist", "image": "https://via.placeholder.com/150" },
+    { "id": 49, "name": "Dr. Allan Kiplangat", "departmentId": 10, "specialty": "Emergency Doctor", "image": "https://via.placeholder.com/150" },
+    { "id": 50, "name": "Dr. Maureen Otieno", "departmentId": 10, "specialty": "Family Medicine", "image": "https://via.placeholder.com/150" }
+  ],
+
+  "appointments": [],
+  "reviews": []
+}
