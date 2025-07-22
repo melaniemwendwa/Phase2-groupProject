@@ -1,4 +1,3 @@
-// src/components/AppointmentForm.jsx
 import { useState } from "react";
 
 function AppointmentForm({ addAppointment }) {

@@ -40,3 +40,17 @@
 .read-the-docs {
   color: #888;
 }
+
+.doctor-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.doctor-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px #ccc;
+}

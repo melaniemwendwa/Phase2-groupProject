@@ -1,8 +1,10 @@
-import { useState } from 'react';
-import AppointmentForm from './components/AppointmentForm'; // adjust path if needed
-import './App.css';
+import { useState } from "react";
+import AppointmentForm from "./components/AppointmentForm";
+import DoctorList from "./components/DoctorList";
+import "./App.css";
 
 function App() {
+  const [selectedDepartmentId, setSelectedDepartmentId] = useState(null);
   const [appointments, setAppointments] = useState([]);
 
   function addAppointment(newAppt) {
@@ -12,16 +14,22 @@ function App() {
   return (
     <div className="App">
       <h1>Doctor Appointment Booking</h1>
-      <AppointmentForm addAppointment={addAppointment} />
 
-      <h2>Upcoming Appointments</h2>
-      <ul>
-        {appointments.map((appt, index) => (
-          <li key={index}>
-            {appt.name} - {appt.date} at {appt.time}
-          </li>
-        ))}
-      </ul>
+      
+      <label>Select Department ID:</label>
+      <input
+        type="number"
+        value={selectedDepartmentId || ""}
+        onChange={(e) => setSelectedDepartmentId(Number(e.target.value))}
+        placeholder="e.g. 1"
+      />
+  
+      {selectedDepartmentId && (
+        <DoctorList departmentId={selectedDepartmentId} />
+      )}
+
+      <h2>Book an Appointment</h2>
+      <AppointmentForm addAppointment={addAppointment} />
     </div>
   );
 }
