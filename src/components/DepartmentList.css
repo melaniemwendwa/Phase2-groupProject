@@ -1,0 +1,31 @@
+
+.department-container {
+  padding: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.department-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.department-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.department-item {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.department-item:hover {
+  background-color: #e6f0ff;
+}
