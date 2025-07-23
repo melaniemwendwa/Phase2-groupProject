@@ -1,4 +1,30 @@
 {
+  "patients": [
+    {
+      "id": "101",
+      "name": "Felix",
+      "username": "fel_ix",
+      "password": "felix123"
+    },
+    {
+      "id": "102",
+      "name": "James",
+      "username": "jam_es",
+      "password": "james123"
+    },
+    {
+      "id": "103",
+      "name": "Melanie",
+      "username": "melan_ie",
+      "password": "melanie123"
+    },
+    {
+      "id": "104",
+      "name": "Abbie",
+      "username": "abb_ie",
+      "password": "abbie123"
+    }
+  ],
   "departments": [
     {
       "id": "1",
@@ -456,6 +482,13 @@
       "name": "Maria Jason",
       "date": "2025-07-01",
       "time": "02:32",
+      "symptoms": "Headaches"
+    },
+    {
+      "id": "b3f9",
+      "name": "Maria Marion",
+      "date": "2025-07-08",
+      "time": "21:06",
       "symptoms": "Headaches"
     }
   ],
