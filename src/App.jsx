@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import DepartmentList from './components/DepartmentList';
@@ -16,11 +17,12 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <DepartmentList />
+      
+      <DepartmentList onDepartmentSelect={setSelectedDepartmentId} />
 
       <h1>Doctor Appointment Booking</h1>
 
-      <label>Select Department ID:</label>
+      <label>Select Department ID (manual):</label>
       <input
         type="number"
         value={selectedDepartmentId || ""}
