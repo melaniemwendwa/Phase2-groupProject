@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import './DepartmentList.css';
 
@@ -7,7 +5,7 @@ function DepartmentList({ onDepartmentSelect }) {
   const [departments, setDepartments] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/departments')
+    fetch('http://localhost:3000/departments')
       .then(res => res.json())
       .then(data => setDepartments(data))
       .catch(err => console.error('Failed to fetch departments:', err));
