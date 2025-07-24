@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -21,6 +22,13 @@ function DepartmentList() {
             style={{ cursor: "pointer", marginBottom: "0.5rem", color: "blue" }}
             onClick={() => navigate(`/departments/${dept.id}`)}
           >
+            <img
+              src={dept.image}
+              alt={dept.name}
+              width="50"
+              height="50"
+              style={{ marginRight: "8px", verticalAlign: "middle" }}
+            />
             {dept.name}
           </li>
         ))}
@@ -30,3 +38,4 @@ function DepartmentList() {
 }
 
 export default DepartmentList;
+
