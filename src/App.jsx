@@ -1,49 +1,57 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import DepartmentList from './components/DepartmentList';
 import DoctorList from './components/DoctorList';
+import AppointmentList from './components/AppointmentList';
 import LoginForm from './Pages/LoginForm';
 import SignUpForm from './Pages/SignUpForm';
 import './App.css';
 
-function App() {
-  const [selectedDepartmentId, setSelectedDepartmentId] = useState(null);
-  const [user, setUser] = useState(null);
+function AppRoutes({ user, setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
+  const navigate = useNavigate();
 
   function handleLogin(user) {
     setUser(user);
+    navigate('/departments');
   }
 
   function handleSignUp(newUser) {
     setUser(newUser);
     setShowSignUp(false);
+    navigate('/departments');
   }
 
   function handleLogout() {
     setUser(null);
-    setSelectedDepartmentId(null);
+    navigate('/login');
   }
 
   return (
-    <div className="App">
-      {user ? (
-        <>
-          <Navbar onLogout={handleLogout} />
-          <DepartmentList onDepartmentSelect={setSelectedDepartmentId} />
-          {selectedDepartmentId && (
-            <>
-              <h1>Doctors in Selected Department</h1>
-              <DoctorList departmentId={selectedDepartmentId} />
-            </>
-          )}
-        </>
-      ) : showSignUp ? (
-        <SignUpForm onSignUp={handleSignUp} onSwitchToLogin={() => setShowSignUp(false)} />
-      ) : (
-        <LoginForm onLogin={handleLogin} onSwitchToSignUp={() => setShowSignUp(true)} />
-      )}
-    </div>
+    <>
+      {user && <Navbar onLogout={handleLogout} />}
+      <Routes>
+        <Route path="/login" element={user ? <Navigate to="/departments" /> : <LoginForm onLogin={handleLogin} onSwitchToSignUp={() => navigate('/signup')} />} />
+        <Route path="/signup" element={user ? <Navigate to="/departments" /> : <SignUpForm onSignUp={handleSignUp} onSwitchToLogin={() => navigate('/login')} />} />
+        <Route path="/departments" element={user ? <DepartmentList /> : <Navigate to="/login" />} />
+        <Route path="/departments/:id" element={user ? <DoctorList user={user} /> : <Navigate to="/login" />} />
+        <Route path="/appointments" element={user ? <AppointmentList user={user} /> : <Navigate to="/login" />} />
+        <Route path="/" element={<Navigate to={user ? "/departments" : "/login"} />} />
+        <Route path="*" element={<Navigate to={user ? "/departments" : "/login"} />} />
+      </Routes>
+    </>
+  );
+}
+
+function App() {
+  const [user, setUser] = useState(null);
+  return (
+    <Router>
+      <div className="App">
+        <AppRoutes user={user} setUser={setUser} />
+      </div>
+    </Router>
   );
 }
 

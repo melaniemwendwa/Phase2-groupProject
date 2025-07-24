@@ -1,25 +1,29 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import DoctorCard from "./DoctorCard";
 
-function DoctorList({ addAppointment }) {
+function DoctorList({ user }) {
+  const { id } = useParams();
   const [doctors, setDoctors] = useState([]);
+  const [departmentName, setDepartmentName] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/doctors")
+    fetch(`http://localhost:3000/doctors?departmentId=${id}`)
       .then((res) => res.json())
       .then((data) => setDoctors(data));
-  }, []);
+    fetch(`http://localhost:3000/departments/${id}`)
+      .then((res) => res.json())
+      .then((data) => setDepartmentName(data.name));
+  }, [id]);
 
   return (
     <div>
-      <h2>Available Doctors</h2>
-      {doctors.map((doctor) => (
-        <DoctorCard
-          key={doctor.id}
-          doctor={doctor}
-          addAppointment={addAppointment}
-        />
-      ))}
+      <h2>Doctors in {departmentName || "Department"}</h2>
+      <div className="doctor-list">
+        {doctors.map((doctor) => (
+          <DoctorCard key={doctor.id} doctor={doctor} user={user} />
+        ))}
+      </div>
     </div>
   );
 }

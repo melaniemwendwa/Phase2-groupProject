@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AppointmentForm from "./AppointmentForm";
 
-function DoctorCard({ doctor, addAppointment }) {
+function DoctorCard({ doctor, user }) {
   const [showForm, setShowForm] = useState(false);
 
   function handleToggleForm() {
@@ -10,14 +10,14 @@ function DoctorCard({ doctor, addAppointment }) {
 
   return (
     <div className="doctor-card">
+      <img src={doctor.image} alt={doctor.name} style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: '8px' }} />
       <h3>{doctor.name}</h3>
-      <p>Specialization: {doctor.specialization}</p>
-      <p>Experience: {doctor.experience} years</p>
-      <button onClick={handleToggleForm}>
+      <p><strong>Specialization:</strong> {doctor.specialty || doctor.specialization}</p>
+      <p><strong>Location:</strong> {doctor.location}</p>
+      <button onClick={handleToggleForm} style={{ marginTop: '10px' }}>
         {showForm ? "Hide Form" : "Book Appointment"}
       </button>
-
-      {showForm && <AppointmentForm addAppointment={addAppointment} />}
+      {showForm && <AppointmentForm doctor={doctor} user={user} />}
     </div>
   );
 }
