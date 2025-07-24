@@ -18,9 +18,8 @@ function AppRoutes({ user, setUser }) {
   }
 
   function handleSignUp(newUser) {
-    setUser(newUser);
     setShowSignUp(false);
-    navigate('/departments');
+    navigate('/login');
   }
 
   function handleLogout() {
