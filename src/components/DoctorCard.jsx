@@ -5,7 +5,7 @@ function DoctorCard({ doctor, user }) {
   const navigate = useNavigate();
 
   function handleBookAppointment() {
-    navigate("/appointments");
+    navigate("/appointments", { state: { fromDoctorCard: true } });
   }
 
   function handleViewReviews() {

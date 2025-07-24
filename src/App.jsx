@@ -7,6 +7,7 @@ import AppointmentList from './components/AppointmentList';
 import LoginForm from './Pages/LoginForm';
 import SignUpForm from './Pages/SignUpForm';
 import './App.css';
+import DoctorReviews from './components/DoctorReviews';
 
 function AppRoutes({ user, setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
@@ -36,6 +37,7 @@ function AppRoutes({ user, setUser }) {
         <Route path="/departments" element={user ? <DepartmentList /> : <Navigate to="/login" />} />
         <Route path="/departments/:id" element={user ? <DoctorList user={user} /> : <Navigate to="/login" />} />
         <Route path="/appointments" element={user ? <AppointmentList user={user} /> : <Navigate to="/login" />} />
+        <Route path="/doctors/:id/reviews" element={user ? <DoctorReviews user={user} /> : <Navigate to="/login" />} />
         <Route path="/" element={<Navigate to={user ? "/departments" : "/login"} />} />
         <Route path="*" element={<Navigate to={user ? "/departments" : "/login"} />} />
       </Routes>
