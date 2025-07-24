@@ -2,7 +2,7 @@ import react, { useState } from "react";
 
 function ReviewForm({ appointmentId, onAddreview}) {
     const [reviewText, setReviewText] = useState("")
-    const handlesubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (!reviewText.trim()) return;
 

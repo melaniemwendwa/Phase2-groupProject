@@ -497,28 +497,6 @@
       "location": "Nyeri"
     }
   ],
-  "appointments": [
-    {
-      "id": "800e",
-      "name": "Maria Marion",
-      "date": "2025-07-16",
-      "time": "02:16",
-      "symptoms": "Headaches"
-    },
-    {
-      "id": "f1ac",
-      "name": "Maria Jason",
-      "date": "2025-07-01",
-      "time": "02:32",
-      "symptoms": "Headaches"
-    },
-    {
-      "id": "b3f9",
-      "name": "Maria Marion",
-      "date": "2025-07-08",
-      "time": "21:06",
-      "symptoms": "Headaches"
-    }
-  ],
+  "appointments": [],
   "reviews": []
 }
