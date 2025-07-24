@@ -28,43 +28,53 @@
   "departments": [
     {
       "id": "1",
-      "name": "Cardiology"
+      "name": "Cardiology",
+      "image": "/cardiology.png"
     },
     {
       "id": "2",
-      "name": "Dermatology"
+      "name": "Dermatology",
+      "image": "/Dermatology.png"
     },
     {
       "id": "3",
-      "name": "Pediatrics"
+      "name": "Pediatrics",
+      "image": "/Pediatrics.png"
     },
     {
       "id": "4",
-      "name": "Neurology"
+      "name": "Neurology",
+      "image": "/Neurology.png"
     },
     {
       "id": "5",
-      "name": "Oncology"
+      "name": "Oncology",
+      "image": "/Oncology.png"
     },
     {
       "id": "6",
-      "name": "Orthopedics"
+      "name": "Orthopedics",
+      "image": "/Orthopedics.png"
     },
     {
       "id": "7",
-      "name": "Psychiatry"
+      "name": "Psychiatry",
+      "image": "/Psychiatry.png"
     },
     {
       "id": "8",
-      "name": "Gynecology"
+      "name": "Gynecology",
+      "image": "/Gynecology.png"
     },
     {
       "id": "9",
-      "name": "Ophthalmology"
+      "name": "Ophthalmology",
+      "image": "/Ophthalmology.png"
     },
     {
       "id": "10",
-      "name": "Urology"
+      "name": "Urology",
+      "image": "/Urology.png"
     }
   ],
   "doctors": [
