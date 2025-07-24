@@ -8,6 +8,11 @@ function DoctorCard({ doctor, user }) {
     navigate("/appointments");
   }
 
+  function handleViewReviews() {
+    // Navigate to a reviews page specific to this doctor (if you're using routing)
+    navigate(`/doctors/${doctor.id}/reviews`);
+  }
+
   return (
     <div className="doctor-card">
       <img
@@ -30,6 +35,9 @@ function DoctorCard({ doctor, user }) {
       </p>
       <button onClick={handleBookAppointment} style={{ marginTop: "10px" }}>
         Book Appointment
+      </button>
+      <button onClick={handleViewReviews} style={{ marginTop: "10px", marginLeft: "10px" }}>
+        Reviews
       </button>
     </div>
   );
