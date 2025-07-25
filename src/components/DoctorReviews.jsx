@@ -11,7 +11,6 @@ function DoctorReviews({ user }) {
 
   useEffect(() => {
     fetchData();
-    // eslint-disable-next-line
   }, [id]);
 
   async function fetchData() {
@@ -27,7 +26,6 @@ function DoctorReviews({ user }) {
     setLoading(false);
   }
 
-  // Aggregate all reviews for this doctor from appointments and generalReviews
   const appointmentReviews = appointments
     .flatMap(appt => appt.reviews || [])
     .filter(r => (typeof r === "string" && r.trim().length > 0) || (typeof r === "object" && r.text && r.text.trim().length > 0));
@@ -36,7 +34,6 @@ function DoctorReviews({ user }) {
 
   useEffect(() => {
     fetchGeneralReviews();
-    // eslint-disable-next-line
   }, [id]);
 
   async function fetchGeneralReviews() {
