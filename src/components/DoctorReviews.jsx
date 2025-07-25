@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReviewForm from "./ReviewForm";
+import "./DoctorReview.css";
 
 function DoctorReviews({ user }) {
   const { id } = useParams(); // doctor id
@@ -81,31 +82,37 @@ function DoctorReviews({ user }) {
   }
 
   return (
-    <div>
-      {loading ? (
-        <p>Loading reviews...</p>
+    <div className="reviews-section">
+  {loading ? (
+    <p className="loading-text">Loading reviews...</p>
+  ) : (
+    <>
+      <h2 className="reviews-heading">Reviews for Dr. {doctor?.name || "Unknown"}</h2>
+      {allReviews.length === 0 ? (
+        <p className="no-reviews">No reviews yet.</p>
       ) : (
-        <>
-          <h2>Reviews for Dr. {doctor?.name || "Unknown"}</h2>
-          {allReviews.length === 0 ? (
-            <p>No reviews yet.</p>
-          ) : (
-            <ul>
-              {allReviews.map((review, i) => (
-                <li key={i}>💬 {typeof review === 'object' ? `${review.patientName}: ${review.text}` : review}</li>
-              ))}
-            </ul>
-          )}
-          {user && (
-            <div style={{ marginTop: "1rem" }}>
-              <h4>Leave a review</h4>
-              <ReviewForm appointmentId={latestPatientAppt ? latestPatientAppt.id : null} onAddreview={handleAddReview} user={user} />
-            </div>
-          )}
-
-        </>
+        <ul className="review-list">
+          {allReviews.map((review, i) => (
+            <li key={i} className="review-item">
+              💬 {typeof review === 'object' ? `${review.patientName}: ${review.text}` : review}
+            </li>
+          ))}
+        </ul>
       )}
-    </div>
+      {user && (
+        <div className="leave-review">
+          <h4>Leave a review</h4>
+          <ReviewForm
+            appointmentId={latestPatientAppt ? latestPatientAppt.id : null}
+            onAddreview={handleAddReview}
+            user={user}
+          />
+        </div>
+      )}
+    </>
+  )}
+</div>
+
   );
 }
 
