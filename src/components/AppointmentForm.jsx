@@ -144,7 +144,8 @@ function AppointmentForm({ addAppointment }) {
               <button type="button" onClick={prevStep}>Back</button>
               <button type="submit">Book Appointment</button>
             </>
-            </div>
+          </div>
+          
           )}
         </form>
       )}
