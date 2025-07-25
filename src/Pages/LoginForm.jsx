@@ -28,8 +28,9 @@ function LoginForm({ onLogin, onSwitchToSignUp }) {
   }
 
   return (
-    <div className="login-container">
-      <form onSubmit={handleSubmit} className="login-form">
+    <div className="login-page-background">
+      <div className="login-container">
+        <form onSubmit={handleSubmit} className="login-form">
         <h3 className="login-title">Log In</h3>
         <input
           className="login-input"
@@ -60,6 +61,7 @@ function LoginForm({ onLogin, onSwitchToSignUp }) {
           </span>
         </p>
       </form>
+      </div>
     </div>
   );
 }

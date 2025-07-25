@@ -17,7 +17,7 @@ function DoctorList({ user }) {
   }, [id]);
 
   return (
-    <div>
+    <div className="login-page-background">
       <h2 style={{paddingTop : "40px", color: "#4CAF50" }}>Doctors in {departmentName || "Department"}</h2>
       <div className="doctor-list">
         {doctors.map((doctor) => (

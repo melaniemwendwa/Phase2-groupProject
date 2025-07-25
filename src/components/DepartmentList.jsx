@@ -14,7 +14,7 @@ function DepartmentList() {
   }, []);
 
   return (
-    <div>
+    <div className="login-page-background">
       <h2 style={{paddingTop : "40px", color: "#4CAF50" }}>Departments</h2>
       <div className="department-card-container">
       {departments.map((dept) => (
