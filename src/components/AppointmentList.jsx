@@ -3,22 +3,27 @@ import { useLocation, useNavigate } from "react-router-dom";
 import ReviewForm from "./ReviewForm";
 import AppointmentForm from "./AppointmentForm";
 
-function AppointmentList() {
+function AppointmentList({ user }) {
   const location = useLocation();
   const navigate = useNavigate();
   const departmentId = location.state?.departmentId;
+  const showOnlyForm = location.state?.fromDoctorCard === true;
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
     fetchAppointments();
-  }, []);
+  }, [user]);
 
   const fetchAppointments = () => {
     fetch("http://localhost:3000/appointments")
       .then((res) => res.json())
-      .then((data) => setAppointments(data))
+      .then((data) => {
+        // Only show appointments for the logged-in user
+        const filtered = user ? data.filter(appt => appt.patientId === user.id) : [];
+        setAppointments(filtered);
+      })
       .catch((error) => console.error("Error fetching appointments:", error))
       .finally(() => setLoading(false));
   };
@@ -89,49 +94,55 @@ function AppointmentList() {
 
   return (
     <div>
-      <h2>Book a New Appointment</h2>
-
-      {departmentId && (
-        <button
-          onClick={() => navigate(`/departments/${departmentId}`)}
-          style={{ marginBottom: "1rem" }}
-        >
-          🔙 Back to Doctors
-        </button>
+      {showOnlyForm && (
+        <>
+          <h2 style={{paddingTop : "40px", color: "#4CAF50" }}>Book a New Appointment</h2>
+          {departmentId && (
+            <button
+              onClick={() => navigate(`/departments/${departmentId}`)}
+              style={{ marginBottom: "1rem" }}
+            >
+              🔙 Back to Doctors
+            </button>
+          )}
+          <button onClick={resetAppointments} style={{ marginBottom: "1rem", marginLeft: "1rem", backgroundColor: "#f44336", color: "#fff", border: "none", padding: "0.5rem 1rem", borderRadius: "5px" }}>
+            🔄 Reset All Appointments
+          </button>
+        </>
       )}
-
-      <button onClick={resetAppointments} style={{ marginBottom: "1rem", marginLeft: "1rem", backgroundColor: "#f44336", color: "#fff", border: "none", padding: "0.5rem 1rem", borderRadius: "5px" }}>
-        🔄 Reset All Appointments
-      </button>
 
       {message && <p style={{ color: "green" }}>{message}</p>}
 
-      <AppointmentForm addAppointment={addAppointment} />
+      {showOnlyForm ? (
+        <AppointmentForm addAppointment={addAppointment} />
+      ) : null}
 
-      <h2>Upcoming Appointments</h2>
-      {loading ? (
-        <p>Loading appointments...</p>
-      ) : appointments.length === 0 ? (
-        <p>No appointments available.</p>
-      ) : (
-        appointments.map((appt) => (
-          <div key={appt.id}>
-            <h4>
-              {appt.name} - {appt.date} at {appt.time}
-            </h4>
-            <p>📝 Symptoms: {appt.symptoms}</p>
+      {showOnlyForm ? null : <>
+        <h2>My Appointments</h2>
+        {loading ? (
+          <p>Loading appointments...</p>
+        ) : appointments.length === 0 ? (
+          <p>No appointments booked yet.</p>
+        ) : (
+          appointments.map((appt) => (
+            <div key={appt.id}>
+              <h4>
+                {appt.name} - {appt.date} at {appt.time}
+              </h4>
+              <p>📝 Symptoms: {appt.symptoms}</p>
 
-            <ul>
-              {appt.reviews?.map((r, i) => (
-                <li key={i}>💬 {r}</li>
-              ))}
-            </ul>
+              <ul>
+                {appt.reviews?.map((r, i) => (
+                  <li key={i}>💬 {r}</li>
+                ))}
+              </ul>
 
-            <ReviewForm appointmentId={appt.id} onAddReview={addReview} />
-            <hr />
-          </div>
-        ))
-      )}
+              <hr />
+            </div>
+          ))
+        )}
+      </>}
+
     </div>
   );
 }

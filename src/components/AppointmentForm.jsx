@@ -129,11 +129,12 @@ function AppointmentForm({ addAppointment }) {
                 onClick={nextStep}
                 disabled={!formData.symptoms}
               >
-                Review
+                Next
               </button>
             </>
           )}
           {step === 4 && (
+            <div className="review-step">
             <>
               <h3>Review Your Appointment</h3>
               <p><strong>Name:</strong> {formData.name}</p>
@@ -143,6 +144,7 @@ function AppointmentForm({ addAppointment }) {
               <button type="button" onClick={prevStep}>Back</button>
               <button type="submit">Book Appointment</button>
             </>
+            </div>
           )}
         </form>
       )}

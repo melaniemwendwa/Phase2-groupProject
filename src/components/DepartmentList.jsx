@@ -15,7 +15,7 @@ function DepartmentList() {
 
   return (
     <div>
-      <h2>Departments</h2>
+      <h2 style={{paddingTop : "40px", color: "#4CAF50" }}>Departments</h2>
       <div className="department-card-container">
       {departments.map((dept) => (
         <div

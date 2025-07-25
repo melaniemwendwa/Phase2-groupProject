@@ -1,12 +1,12 @@
 import react, { useState } from "react";
 
-function ReviewForm({ appointmentId, onAddreview}) {
+function ReviewForm({ appointmentId, onAddreview, user }) {
     const [reviewText, setReviewText] = useState("")
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!reviewText.trim()) return;
 
-        onAddreview(appointmentId, reviewText);
+        onAddreview(appointmentId, reviewText, user);
         setReviewText("");
 
     };
@@ -20,6 +20,7 @@ function ReviewForm({ appointmentId, onAddreview}) {
             onChange={(e) => setReviewText(e.target.value)}
             required
             />
+            <button type="submit">Submit</button>
         </form>
 
     );

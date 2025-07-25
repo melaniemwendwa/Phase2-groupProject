@@ -18,7 +18,7 @@ function DoctorList({ user }) {
 
   return (
     <div>
-      <h2>Doctors in {departmentName || "Department"}</h2>
+      <h2 style={{paddingTop : "40px", color: "#4CAF50" }}>Doctors in {departmentName || "Department"}</h2>
       <div className="doctor-list">
         {doctors.map((doctor) => (
           <DoctorCard key={doctor.id} doctor={doctor} user={user} />

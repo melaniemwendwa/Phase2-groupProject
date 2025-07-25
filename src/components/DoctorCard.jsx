@@ -5,7 +5,7 @@ function DoctorCard({ doctor, user }) {
   const navigate = useNavigate();
 
   function handleBookAppointment() {
-    navigate("/appointments");
+    navigate("/appointments", { state: { fromDoctorCard: true } });
   }
 
   function handleViewReviews() {
@@ -33,10 +33,10 @@ function DoctorCard({ doctor, user }) {
       <p>
         <strong>Location:</strong> {doctor.location}
       </p>
-      <button onClick={handleBookAppointment} style={{ marginTop: "10px" }}>
+      <button onClick={handleBookAppointment} style={{ marginTop: "10px", background: "#4CAF50"}}>
         Book Appointment
       </button>
-      <button onClick={handleViewReviews} style={{ marginTop: "10px", marginLeft: "10px" }}>
+      <button onClick={handleViewReviews} style={{ marginTop: "10px", marginLeft: "10px", background: "#2196F3"}}>
         Reviews
       </button>
     </div>
