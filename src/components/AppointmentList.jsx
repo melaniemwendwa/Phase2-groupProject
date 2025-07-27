@@ -124,14 +124,14 @@ function AppointmentList({ user }) {
           {loading ? (
             <p>Loading appointments...</p>
           ) : appointments.length === 0 ? (
-            <p>No appointments booked yet.</p>
+            <p><span style={{ color: '#111' }}><strong>No appointments booked yet.</strong></span></p>
           ) : (
             appointments.map((appt) => (
               <div key={appt.id} className="appointment-card-centered">
                 <h4 style={{ textAlign: 'center' }}>
                   {appt.name} - {appt.date} at {appt.time}
                 </h4>
-                <p style={{ textAlign: 'center' }}>📝 Symptoms: {appt.symptoms}</p>
+                <p style={{ textAlign: 'center' }}>📝 <strong>Symptoms:</strong> {appt.symptoms}</p>
 
                 <ul style={{ textAlign: 'center', listStyle: 'none', padding: 0 }}>
                   {appt.reviews?.map((r, i) => (

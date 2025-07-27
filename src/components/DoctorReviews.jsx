@@ -84,7 +84,7 @@ function DoctorReviews({ user }) {
     <p className="loading-text">Loading reviews...</p>
   ) : (
     <>
-      <h2 className="reviews-heading">Reviews for Dr. {doctor?.name || "Unknown"}</h2>
+      <h2 className="reviews-heading">Reviews for  {doctor?.name || "Unknown"}</h2>
       {allReviews.length === 0 ? (
         <p className="no-reviews">No reviews yet.</p>
       ) : (
