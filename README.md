@@ -49,17 +49,18 @@ A web application built using React (frontend) and JSON Server (mock backend) th
 ## ⚙️ Installation Instructions
 
 ### 1. Clone the repository
+
+```bash
 git clone https://github.com/YOUR_USERNAME/doctor-appointment-app.git
 cd doctor-appointment-app
 
-
-#### 2. Install Dependencies
+### 2. Install dependancies
 npm install
 npm install -g json-server
 json-server --watch db.json --port 3000
 
 
-## 📁 Table of Contents
+### Folder Structure
 DOCTOR-APPOINTMENT-APP
 │
 ├── node_modules/                # Installed npm packages (auto-generated)
