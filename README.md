@@ -16,6 +16,7 @@ A web application built using React (frontend) and JSON Server (mock backend) th
 - [🧰 Technologies Used]
 - [⚙️ Installation Instructions]
 - [📂 Folder Structure]
+- [🌐 License]
 - [🌐 Routes Overview]
 - [🧪 Future Improvements]
 - [📬 Contact]
@@ -102,6 +103,9 @@ DOCTOR-APPOINTMENT-APP
 ├── eslint.config.js            # Linting rules configuration
 └── README.md                   # Project documentation (this file)
 ```
+
+### License
+This project is under no license.
 
 
 ### Routes overview
