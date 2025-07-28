@@ -54,13 +54,17 @@ A web application built using React (frontend) and JSON Server (mock backend) th
 git clone https://github.com/YOUR_USERNAME/doctor-appointment-app.git
 cd doctor-appointment-app
 
+```
+
 ### 2. Install dependancies
+```bash
 npm install
 npm install -g json-server
 json-server --watch db.json --port 3000
-
+```
 
 ### Folder Structure
+```bash
 DOCTOR-APPOINTMENT-APP
 │
 ├── node_modules/                # Installed npm packages (auto-generated)
@@ -97,12 +101,14 @@ DOCTOR-APPOINTMENT-APP
 ├── vite.config.js              # Vite bundler configuration
 ├── eslint.config.js            # Linting rules configuration
 └── README.md                   # Project documentation (this file)
-
+```
 
 
 ### Routes overview
+```bash
 npm run dev
 json-server --watch db.json --port 3000
+```
 
 
 ### Future Improvements
