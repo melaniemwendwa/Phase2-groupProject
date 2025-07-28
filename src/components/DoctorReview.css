@@ -1,52 +1,92 @@
-
 .reviews-section {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f8fafc;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(to bottom right, #f0f9ff, #e0f2fe);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.reviews-section:hover {
+  transform: scale(1.01);
+}
+
+.reviews-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0f172a;
+  border-bottom: 2px solid #94a3b8;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+.loading-text,
+.no-reviews {
+  font-style: italic;
+  color: #64748b;
+  text-align: center;
+  font-size: 1.1rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.review-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.review-item {
+  background-color: #e2e8f0;
+  padding: 16px 20px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  color: #1e293b;
+  font-size: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+  position: relative;
+  animation: slideIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+.review-item::before {
+  content: "💬";
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  font-size: 1.2rem;
+}
+
+.leave-review {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #cbd5e1;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.leave-review h4 {
+  margin-bottom: 12px;
+  color: #0f172a;
+  font-size: 1.3rem;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
   }
-  
-  .reviews-heading {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #0f172a;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 6px;
+  to {
+    transform: translateX(0px);
+    opacity: 1;
   }
-  
-  .loading-text,
-  .no-reviews {
-    font-style: italic;
-    color: #64748b;
-    margin: 10px 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .review-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
+  to {
+    opacity: 1;
   }
-  
-  .review-item {
-    background-color: #e2e8f0;
-    padding: 10px 14px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    color: #1e293b;
-    font-size: 1rem;
-  }
-  
-  .leave-review {
-    margin-top: 30px;
-    padding-top: 15px;
-    border-top: 1px solid #cbd5e1;
-  }
-  
-  .leave-review h4 {
-    margin-bottom: 10px;
-    color: #0f172a;
-  }
-  
+}

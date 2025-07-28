@@ -95,52 +95,55 @@ function AppointmentList({ user }) {
   return (
     <div>
       {showOnlyForm && (
-        <>
-          <h2 style={{paddingTop : "40px", color: "#4CAF50" }}>Book a New Appointment</h2>
+        <div className="booking-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <h2 style={{ paddingTop: "40px", color: "#4CAF50", textAlign: "center" }}>Book a New Appointment</h2>
           {departmentId && (
             <button
               onClick={() => navigate(`/departments/${departmentId}`)}
               style={{ marginBottom: "1rem" }}
             >
-              🔙 Back to Doctors
             </button>
           )}
-          <button onClick={resetAppointments} style={{ marginBottom: "1rem", marginLeft: "1rem", backgroundColor: "#f44336", color: "#fff", border: "none", padding: "0.5rem 1rem", borderRadius: "5px" }}>
-            🔄 Reset All Appointments
-          </button>
-        </>
+          {message ? (
+            <p style={{ color: "green", textAlign: "center", marginBottom: "1rem" }}>{message}</p>
+          ) : (
+            <button onClick={resetAppointments} style={{ marginBottom: "1rem", backgroundColor: "#f44336", color: "#fff", border: "none", padding: "0.5rem 1rem", borderRadius: "5px" }}>
+              🔄 Reset All Appointments
+            </button>
+          )}
+        </div>
       )}
-
-      {message && <p style={{ color: "green" }}>{message}</p>}
 
       {showOnlyForm ? (
         <AppointmentForm addAppointment={addAppointment} />
       ) : null}
 
       {showOnlyForm ? null : <>
-        <h2>My Appointments</h2>
-        {loading ? (
-          <p>Loading appointments...</p>
-        ) : appointments.length === 0 ? (
-          <p>No appointments booked yet.</p>
-        ) : (
-          appointments.map((appt) => (
-            <div key={appt.id}>
-              <h4>
-                {appt.name} - {appt.date} at {appt.time}
-              </h4>
-              <p>📝 Symptoms: {appt.symptoms}</p>
+        <div className="appointments-section-centered">
+          <h2 style={{ marginTop: '64px', color: '#4CAF50', textAlign: 'center' }}>My Appointments</h2>
+          {loading ? (
+            <p>Loading appointments...</p>
+          ) : appointments.length === 0 ? (
+            <p><span style={{ color: '#111' }}><strong>No appointments booked yet.</strong></span></p>
+          ) : (
+            appointments.map((appt) => (
+              <div key={appt.id} className="appointment-card-centered">
+                <h4 style={{ textAlign: 'center' }}>
+                  {appt.name} - {appt.date} at {appt.time}
+                </h4>
+                <p style={{ textAlign: 'center' }}>📝 <strong>Symptoms:</strong> {appt.symptoms}</p>
 
-              <ul>
-                {appt.reviews?.map((r, i) => (
-                  <li key={i}>💬 {r}</li>
-                ))}
-              </ul>
+                <ul style={{ textAlign: 'center', listStyle: 'none', padding: 0 }}>
+                  {appt.reviews?.map((r, i) => (
+                    <li key={i}>💬 {r}</li>
+                  ))}
+                </ul>
 
-              <hr />
-            </div>
-          ))
-        )}
+                <hr />
+              </div>
+            ))
+          )}
+        </div>
       </>}
 
     </div>
