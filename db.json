@@ -58,47 +58,47 @@
     {
       "id": "2",
       "name": "Dermatology",
-      "image": "/Dermatology.png"
+      "image": "https://images.pexels.com/photos/4210660/pexels-photo-4210660.jpeg"
     },
     {
       "id": "3",
       "name": "Pediatrics",
-      "image": "/Pediatrics.png"
+      "image": "https://images.pexels.com/photos/28099429/pexels-photo-28099429.jpeg"
     },
     {
       "id": "4",
       "name": "Neurology",
-      "image": "/Neurology.png"
+      "image": "https://images.pexels.com/photos/4226119/pexels-photo-4226119.jpeg"
     },
     {
       "id": "5",
       "name": "Oncology",
-      "image": "/Oncology.png"
+      "image": "https://images.pexels.com/photos/7659551/pexels-photo-7659551.jpeg"
     },
     {
       "id": "6",
       "name": "Orthopedics",
-      "image": "/Orthopedics.png"
+      "image": "https://images.pexels.com/photos/207496/pexels-photo-207496.jpeg"
     },
     {
       "id": "7",
       "name": "Psychiatry",
-      "image": "/Psychiatry.png"
+      "image": "https://images.pexels.com/photos/4098340/pexels-photo-4098340.jpeg"
     },
     {
       "id": "8",
       "name": "Gynecology",
-      "image": "/Gynecology.png"
+      "image": "https://images.pexels.com/photos/7088841/pexels-photo-7088841.jpeg"
     },
     {
       "id": "9",
       "name": "Ophthalmology",
-      "image": "/Ophthalmology.png"
+      "image": "https://imgs.search.brave.com/yJF2qYQAlzno1zbiAEHLM2SI1YbLy3z0DVU1-LR0hPU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMC8w/NC8xMC8yMy8xMS9l/eWUtdGVzdC01MDI4/MTAzXzY0MC5qcGc"
     },
     {
       "id": "10",
       "name": "Urology",
-      "image": "/Urology.png"
+      "image": "https://images.pexels.com/photos/6129118/pexels-photo-6129118.jpeg"
     }
   ],
   "doctors": [
@@ -783,6 +783,20 @@
       "date": "2025-08-07",
       "time": "11:30",
       "symptoms": "skin lumps"
+    },
+    {
+      "id": "6b06",
+      "name": "Felix Kemboi",
+      "date": "2029-04-04",
+      "time": "08:39",
+      "symptoms": "cough"
+    },
+    {
+      "id": "6b06",
+      "name": "Felix Kemboi",
+      "date": "2029-04-04",
+      "time": "08:39",
+      "symptoms": "cough"
     }
   ],
   "reviews": []
