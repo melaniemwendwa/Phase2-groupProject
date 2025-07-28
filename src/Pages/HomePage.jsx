@@ -25,8 +25,9 @@ function HomePage() {
       style={{ backgroundImage: `url(${imageLinks[currentIndex]})` }}
     >
       <div className="overlay">
-        <h1>Welcome to Doctor Appointment App</h1>
-        <p>Book appointments easily with trusted professionals.</p>
+        <h1>Welcome to Smartcare</h1>
+        <h3>Book appointments easily with trusted professionals.</h3>
+        <p>SmartCare, where every visit feels like a warm hug!💕</p>
         <div className="home-buttons">
           <Link to="/login" className="btn">Login</Link>
           <Link to="/signup" className="btn">Sign Up</Link>
