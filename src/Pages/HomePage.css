@@ -1,0 +1,46 @@
+.home-page {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  max-width: 90%;
+}
+
+.overlay h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.overlay p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.home-buttons .btn {
+  display: inline-block;
+  margin: 0 1rem;
+  padding: 0.75rem 2rem;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.home-buttons .btn:hover {
+  background-color: #0056b3;
+}
